@@ -207,3 +207,21 @@ def in_puzzle_node_list(puzzle_node, puzzle_node_list):
             return True
 
     return False
+
+
+'''
+Returns the path of a PuzzleNode
+Arguments:
+  - puzzle_node: Instance of PuzzleNode class
+Returns: List of PuzzleNode instances
+'''
+
+
+def return_path(puzzle_node):
+    path = []
+
+    while puzzle_node is not None:
+        path.insert(0, puzzle_node.matrix)
+        puzzle_node = puzzle_node.parent
+
+    return path
