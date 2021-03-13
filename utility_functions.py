@@ -163,3 +163,47 @@ Returns: N x N Matrix
 
 def generate_goal(dimensions):
     return generate_puzzle(dimensions, do_shuffle=False)
+
+
+'''
+Generates the index limit of a Matrix -> The limit index before a row / column goes out of range
+Arguments:
+  - matrix: NxN Matrix e.g. ((1,2,3),(4,5,6),(7,8,9))
+Returns: Number
+'''
+
+
+def generate_limit(matrix):
+    return len(matrix) - 1
+
+
+'''
+Returns whether the matrix has reach the goal or not
+Arguments:
+  - matrix: NxN Matrix e.g. ((1,2,3),(4,5,6),(7,8,9))
+Returns: Boolean
+'''
+
+
+def is_goal(matrix):
+    dimensions = len(matrix)
+    goal = generate_goal(dimensions)
+
+    return matrix == goal
+
+
+'''
+Checks if a PuzzleNode is contained in the a PuzzleNode list
+Arguments:
+  - puzzle_node: Instance of PuzzleNode class
+  - puzzle_node_list: List of PuzzleNode instances
+Returns: Boolean
+'''
+
+
+def in_puzzle_node_list(puzzle_node, puzzle_node_list):
+    for element in puzzle_node_list:
+        if element.matrix == puzzle_node.matrix:
+            return True
+
+    return False
