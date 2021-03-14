@@ -193,20 +193,48 @@ def is_goal(matrix):
 
 
 '''
-Checks if a PuzzleNode is contained in the a PuzzleNode list
+Checks if a Node is contained in a list
 Arguments:
-  - puzzle_node: Instance of PuzzleNode class
-  - puzzle_node_list: List of PuzzleNode instances
+  - node: Tuple e.g. (depth, parent, state)
+  - node_list: List of Tuples e.g. [(depth, parent, state), (depth, parent, state)]
 Returns: Boolean
 '''
 
 
-def in_puzzle_node_list(puzzle_node, puzzle_node_list):
-    for element in puzzle_node_list:
-        if element.matrix == puzzle_node.matrix:
+def in_list(node, node_list):
+    for element in node_list:
+        if node[2] == element[2]:
             return True
 
     return False
+
+
+'''
+Generates a List of tuple (children state) by making every possible move from a current state
+Arguments:
+  - node: Tuple e.g. (depth, parent, state)
+Returns: List of Tuples e.g. [(depth, parent, state), (depth, parent, state)]
+'''
+
+
+def generate_children(node):
+    matrix = node[2]
+    new_depth = node[0] + 1
+
+    limit = generate_limit(matrix)
+
+    children = []
+
+    for i, row in enumerate(matrix):
+        for j, element in enumerate(row):
+            if i < limit:
+                new_state = down(matrix, [i, j])
+                children.append((new_depth, node, new_state))
+            if j < limit:
+                new_state = right(matrix, [i, j])
+                children.append((new_depth, node, new_state))
+
+    return children
 
 
 '''
@@ -217,11 +245,11 @@ Returns: List of PuzzleNode instances
 '''
 
 
-def return_path(puzzle_node):
+def return_path(node):
     path = []
 
-    while puzzle_node is not None:
-        path.insert(0, puzzle_node.matrix)
-        puzzle_node = puzzle_node.parent
+    while node is not None:
+        path.insert(0, node[2])
+        node = node[1]
 
     return path
