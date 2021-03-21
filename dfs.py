@@ -10,14 +10,14 @@ Returns: Dictionary with the path (array of matrices from the start state to the
 '''
 
 
-def depth_first_search(matrix, k):
+def depth_first_search(state, k):
     # Initializing start time
     start_time = time.time()
 
     # Initializing open (to-do list) and closed (completed list) lists
     # The open array is initialized wiht a tuple indicating the depth (0) of the current node, the parent (None) of the node
     # and the initial matrix state
-    open = [(0, None, matrix)]
+    open = [(0, None, state)]
     closed = []
 
     # Algorithm runs while the open list has elements

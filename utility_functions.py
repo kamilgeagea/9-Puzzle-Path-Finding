@@ -185,11 +185,11 @@ Returns: Boolean
 '''
 
 
-def is_goal(matrix):
-    dimensions = len(matrix)
+def is_goal(state):
+    dimensions = len(state)
     goal = generate_goal(dimensions)
 
-    return matrix == goal
+    return state == goal
 
 
 '''
@@ -201,9 +201,9 @@ Returns: Boolean
 '''
 
 
-def in_list(node, node_list):
-    for element in node_list:
-        if node[2] == element[2]:
+def in_list(state, state_list):
+    for element in state_list:
+        if state[2] == element[2]:
             return True
 
     return False
@@ -217,9 +217,9 @@ Returns: List of Tuples e.g. [(depth, parent, state), (depth, parent, state)]
 '''
 
 
-def generate_children(node):
-    matrix = node[2]
-    new_depth = node[0] + 1
+def generate_children(state):
+    matrix = state[2]
+    new_depth = state[0] + 1
 
     limit = generate_limit(matrix)
 
@@ -229,27 +229,27 @@ def generate_children(node):
         for j, element in enumerate(row):
             if i < limit:
                 new_state = down(matrix, [i, j])
-                children.append((new_depth, node, new_state))
+                children.append((new_depth, state, new_state))
             if j < limit:
                 new_state = right(matrix, [i, j])
-                children.append((new_depth, node, new_state))
+                children.append((new_depth, state, new_state))
 
     return children
 
 
 '''
-Returns the path of a PuzzleNode
+Returns the path of a State
 Arguments:
-  - puzzle_node: Instance of PuzzleNode class
-Returns: List of PuzzleNode instances
+  - state: Instance of State (Tuple)
+Returns: List of State instances
 '''
 
 
-def return_path(node):
+def return_path(state):
     path = []
 
-    while node is not None:
-        path.insert(0, node[2])
-        node = node[1]
+    while state is not None:
+        path.insert(0, state[2])
+        state = state[1]
 
     return path
