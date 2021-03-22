@@ -253,3 +253,19 @@ def return_path(state):
         state = state[1]
 
     return path
+
+
+'''
+Returns the coords (row, col) of an element in an NxN Matrix
+Arguments:
+  - matrix: NxN Matrix (tuple)
+  - element: Any
+Returns: Tuple (row, col) indicating the coords of the element
+'''
+
+
+def get_coords(matrix, element):
+    for row in range(0, len(matrix)):
+        for col, ele in enumerate(matrix[row]):
+            if ele == element:
+                return (row, col)
