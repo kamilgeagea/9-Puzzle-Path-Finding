@@ -1,5 +1,7 @@
 from dfs import depth_first_search
 from id import iterative_deepening
+from a_star import a_star
+from heuristics import h1
 from utility_functions import generate_puzzle
 
 print("\n\n")
@@ -20,6 +22,11 @@ print("===== Iterarive-Deepening - 2x2 Matrix =====\n")
 print("Path: " + str(id2x2["data"]))
 print("Execution time - " + str(id2x2["execution_time"]) + " seconds\n\n")
 
+# Apply A* Algorithm on 2x2 puzzle
+as2x2 = a_star(puzzle2x2, h1)
+print("===== A-Star - 2x2 Matrix =====\n")
+print("Path: " + str(as2x2["data"]))
+print("Execution time - " + str(as2x2["execution_time"]) + " seconds\n\n")
 
 # Create 3x3 puzzle
 puzzle3x3 = generate_puzzle(3)
@@ -35,3 +42,19 @@ id3x3 = iterative_deepening(puzzle3x3)
 print("===== Iterarive-Deepening - 3x3 Matrix =====\n")
 print("Path: " + str(id3x3["data"]))
 print("Execution time - " + str(id3x3["execution_time"]) + " seconds\n\n")
+
+# Apply A* Algorithm on 3x3 puzzle
+as3x3 = a_star(puzzle3x3, h1)
+print("===== A-Star - 3x3 Matrix =====\n")
+print("Path: " + str(as3x3["data"]))
+print("Execution time - " + str(as3x3["execution_time"]) + " seconds\n\n")
+
+
+# Create 5x5 puzzle
+puzzle5x5 = generate_puzzle(5)
+
+# Apply A* Algorithm on 5x5 puzzle
+as5x5 = a_star(puzzle5x5, h1)
+print("===== A-Star - 4x4 Matrix =====\n")
+print("Path: " + str(as5x5["data"]))
+print("Execution time - " + str(as5x5["execution_time"]) + " seconds\n\n")

@@ -28,8 +28,3 @@ def h1(state):
             sum += abs(i - goal_i) + abs(j - goal_j)
 
     return sum
-
-
-matrix = ((2, 1, 3), (4, 5, 7), (6, 8, 9))
-
-print(h1(matrix))
