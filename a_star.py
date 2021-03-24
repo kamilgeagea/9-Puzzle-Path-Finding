@@ -26,7 +26,8 @@ def a_star(state, heuristic):
         if time.time() - start_time > 60:
             return {
                 "data": "No solutions - Time exceeded",
-                "execution_time": time.time() - start_time
+                "execution_time": time.time() - start_time,
+                "search_path": "No solutions"
             }
 
         # Retrieve the first item in the open list, remove it, and add it to the closed list to mark it as done
@@ -71,5 +72,6 @@ def a_star(state, heuristic):
     # Return execution time and "no solutions" message
     return {
         "data": "No solutions - Execution Time: ",
-        "execution_time": finish_time
+        "execution_time": finish_time,
+        "search_path": "No solutions"
     }

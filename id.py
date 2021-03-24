@@ -23,7 +23,8 @@ def iterative_deepening(matrix):
         if time.time() - start_time > 60:
             return {
                 "data": "No solutions - Time exceeded",
-                "execution_time": time.time() - start_time
+                "execution_time": time.time() - start_time,
+                "search_path": "No solutions"
             }
 
         # Execute DFS

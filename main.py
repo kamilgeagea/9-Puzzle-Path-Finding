@@ -56,8 +56,8 @@ print("Path: " + str(as3x3["data"]))
 print("Execution time h1 - " + str(as3x3["execution_time"]) + " seconds\n\n")
 
 # Apply A* Algorithm on 3x3 puzzle
-as3x3 = a_star(puzzle3x3, h4)
-print("===== A-Star - 3x3 Matrix =====\n")
-print("Path: " + str(as3x3["data"]))
-# print("Search Path: " + str(as3x3["search_path"]))
-print("Execution time h4 - " + str(as3x3["execution_time"]) + " seconds\n\n")
+# as3x3 = a_star(puzzle3x3, h4)
+# print("===== A-Star - 3x3 Matrix =====\n")
+# print("Path: " + str(as3x3["data"]))
+# # print("Search Path: " + str(as3x3["search_path"]))
+# print("Execution time h4 - " + str(as3x3["execution_time"]) + " seconds\n\n")

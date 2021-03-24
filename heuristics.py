@@ -44,44 +44,6 @@ def h2(state):
     # Get Matrix Dimensions
     dimensions = len(state)
 
-    # Generate Goal
-    goal = generate_goal(dimensions)
-
-    # Initiate sum
-    sum = 0
-
-    # Loop through every element and compute distance with the goal coords
-    # Add the distance to the sum
-    for i in range(0, dimensions):
-        for j in range(0, dimensions):
-            element = state[i][j]
-            goal_element = get_coords(goal, element)
-
-            point1 = np.array(goal_element)
-            point2 = np.array((i, j))
-
-            sum += np.linalg.norm(point1-point2)
-
-    return sum
-
-
-def h3(state):
-    a = list(chain.from_iterable(state))
-
-    sum = 0
-
-    for i in range(0, len(a)):
-        for j in range(i+1, len(a)):
-            if a[i] > a[j]:
-                sum += 1
-
-    return sum
-
-
-def h4(state):
-    # Get Matrix Dimensions
-    dimensions = len(state)
-
     # Compute n
     n = dimensions - 1
 
@@ -114,3 +76,41 @@ def h4(state):
             sum += importance * distance_to_goal
 
     return sum
+
+
+# def h4(state):
+#     # Get Matrix Dimensions
+#     dimensions = len(state)
+
+#     # Generate Goal
+#     goal = generate_goal(dimensions)
+
+#     # Initiate sum
+#     sum = 0
+
+#     # Loop through every element and compute distance with the goal coords
+#     # Add the distance to the sum
+#     for i in range(0, dimensions):
+#         for j in range(0, dimensions):
+#             element = state[i][j]
+#             goal_element = get_coords(goal, element)
+
+#             point1 = np.array(goal_element)
+#             point2 = np.array((i, j))
+
+#             sum += np.linalg.norm(point1-point2)
+
+#     return sum
+
+
+# def h3(state):
+#     a = list(chain.from_iterable(state))
+
+#     sum = 0
+
+#     for i in range(0, len(a)):
+#         for j in range(i+1, len(a)):
+#             if a[i] > a[j]:
+#                 sum += 1
+
+#     return sum
