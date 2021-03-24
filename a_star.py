@@ -41,7 +41,8 @@ def a_star(state, heuristic):
             # Return the path that lead to the solution and the execution time
             return {
                 "data": return_path(node),
-                "execution_time": finish_time
+                "execution_time": finish_time,
+                "search_path": closed
             }
 
         # If the state is not the goal state - generate children

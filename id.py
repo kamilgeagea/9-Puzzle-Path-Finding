@@ -37,7 +37,8 @@ def iterative_deepening(matrix):
 
             return {
                 "data": results["data"],
-                "execution_time": finish_time
+                "execution_time": finish_time,
+                "search_path": results["search_path"]
             }
 
         # Increment Max Depth for next iteration
