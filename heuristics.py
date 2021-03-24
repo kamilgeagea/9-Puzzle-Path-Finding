@@ -80,7 +80,7 @@ def h3(state):
 
 matrix = ((5, 9, 8), (4, 2, 1), (7, 3, 6))
 
-print(h3(matrix))
+# print(h3(matrix))
 
 
 def h3(state):
