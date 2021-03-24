@@ -1,4 +1,5 @@
 import numpy as np
+from itertools import chain
 from utility_functions import generate_goal, get_coords
 
 '''
@@ -62,3 +63,47 @@ def h2(state):
             sum += np.linalg.norm(point1-point2)
 
     return sum
+
+
+def h3(state):
+    a = list(chain.from_iterable(state))
+
+    sum = 0
+
+    for i in range(0, len(a)):
+        for j in range(i+1, len(a)):
+            if a[i] > a[j]:
+                sum += 1
+
+    return sum
+
+
+matrix = ((5, 9, 8), (4, 2, 1), (7, 3, 6))
+
+print(h3(matrix))
+
+
+def h3(state):
+    # Get Matrix Dimensions
+    dimensions = len(state)
+
+    # Compute n
+    n = dimensions - 1
+
+    # Generate Goal
+    goal = generate_goal(dimensions)
+
+    # Initiate sum
+    sum = 0
+
+    # Define the coordinates of the 4 corners
+    corners = ((0, 0), (0, n), (n, 0), (n, n))
+
+    for i in range(0, dimensions):
+        for j in range(0, dimensions):
+            element = state[i][j]
+            goal_element = get_coords(state, element)
+
+            closest_corner = ((0, 0), float("inf"))
+            for k in corners:
+                distance = ()

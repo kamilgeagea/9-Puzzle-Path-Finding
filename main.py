@@ -1,7 +1,7 @@
 from dfs import depth_first_search
 from id import iterative_deepening
 from a_star import a_star
-from heuristics import h1, h2
+from heuristics import h1, h2, h3
 from utility_functions import generate_puzzle
 
 print("\n\n")
