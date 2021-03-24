@@ -78,12 +78,7 @@ def h3(state):
     return sum
 
 
-matrix = ((5, 9, 8), (4, 2, 1), (7, 3, 6))
-
-print(h3(matrix))
-
-
-def h3(state):
+def h4(state):
     # Get Matrix Dimensions
     dimensions = len(state)
 
@@ -102,8 +97,20 @@ def h3(state):
     for i in range(0, dimensions):
         for j in range(0, dimensions):
             element = state[i][j]
-            goal_element = get_coords(state, element)
+            goal_element = get_coords(goal, element)
 
             closest_corner = ((0, 0), float("inf"))
             for k in corners:
-                distance = ()
+                distance = abs(k[0] - goal_element[0]) + \
+                    abs(k[1] - goal_element[1])
+                if distance < closest_corner[1]:
+                    closest_corner = (k, distance)
+
+            importance = n - closest_corner[1]
+
+            distance_to_goal = abs(
+                i - goal_element[0]) + abs(j - goal_element[1])
+
+            sum += importance * distance_to_goal
+
+    return sum
