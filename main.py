@@ -25,14 +25,14 @@ a_star_h2_results = []
 
 # Fill the array by computing each puzzle with each algorithm
 for puzzle in puzzles:
-    # dfs_results.append(depth_first_search(puzzle, k=None))
-    # id_results.append(iterative_deepening(puzzle))
+    dfs_results.append(depth_first_search(puzzle, k=None))
+    id_results.append(iterative_deepening(puzzle))
     a_star_h1_results.append(a_star(puzzle, h1))
     a_star_h2_results.append(a_star(puzzle, h2))
 
 
 # Generate output file for DFS
-# generate_output("results/dfs.txt", dfs_results)
-# generate_output("results/id.txt", id_results)
+generate_output("results/dfs.txt", dfs_results)
+generate_output("results/id.txt", id_results)
 generate_output("results/a_star_h1.txt", a_star_h1_results)
 generate_output("results/a_star_h2.txt", a_star_h2_results)

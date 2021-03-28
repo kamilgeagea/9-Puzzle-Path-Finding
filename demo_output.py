@@ -4,6 +4,8 @@ from a_star import a_star
 from heuristics import h1, h2
 from utility_functions import print_output
 
+# Insert puzzles in array
+
 puzzles = [
     ((4, 6, 1), (2, 3, 7), (9, 5, 8)),
     ((5, 7, 3), (1, 6, 8), (9, 2, 4))

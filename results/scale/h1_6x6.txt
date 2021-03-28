@@ -1,0 +1,34 @@
+Statistics: 
+
+Total Execution Time: 60.034796714782715
+
+Total Search Path: 0
+
+Total Solution Path: 0
+
+Total No Solutions: 1
+
+Average Execution Time: 60.034796714782715
+
+Average Search Path: 0
+
+Average Solution Path: 0
+
+Average No Solutions: 1.0
+
+
+
+
+
+=== Puzzle 1 ===
+
+Puzzle: N
+
+Execution Time: 60.034796714782715
+
+Search Path: No solutions
+
+Solution Path: No solutions - Time exceeded
+
+
+
