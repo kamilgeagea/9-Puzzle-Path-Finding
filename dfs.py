@@ -1,5 +1,5 @@
 import time
-from utility_functions import generate_puzzle, is_goal, in_list, generate_children, return_path
+from utility_functions import generate_puzzle, is_goal, in_list, generate_children, return_path, return_search_path
 
 '''
 Depth First Search Algorithm on a Matrix
@@ -43,7 +43,7 @@ def depth_first_search(state, k):
             return {
                 "data": return_path(node),
                 "execution_time": finish_time,
-                "search_path": closed
+                "search_path": return_search_path(closed)
             }
 
         # If the state is not the goal state - go deeper into the branch

@@ -1,63 +1,38 @@
+# Draw.io Link: https://app.diagrams.net/#LUntitled%20Diagram
+
 from dfs import depth_first_search
 from id import iterative_deepening
 from a_star import a_star
-from heuristics import h1, h2, h3, h4
-from utility_functions import generate_puzzle
+from heuristics import h1, h2
+from utility_functions import generate_puzzles, generate_output
 
-print("\n\n")
+# Number of puzzles
+n = 20
 
-# Create 2x2 puzzle
+# Dimensions
+dimensions = 3
 
-# puzzle2x2 = generate_puzzle(2)
+# Create puzzle
+puzzles = generate_puzzles(n, dimensions)
 
-# # Apply Depth-First-Search on 2x2 puzzle
-# dfs2x2 = depth_first_search(puzzle2x2, k=None)
-# print("===== Depth-First-Search - 2x2 Matrix =====\n")
-# print("Path: " + str(dfs2x2["data"]))
-# print("Search Path: " + str(dfs2x2["search_path"]))
-# print("Execution time - " + str(dfs2x2["execution_time"]) + " seconds\n\n")
 
-# # Apply Iterative Deepening on 2x2 puzzle
-# id2x2 = iterative_deepening(puzzle2x2)
-# print("===== Iterarive-Deepening - 2x2 Matrix =====\n")
-# print("Path: " + str(id2x2["data"]))
-# print("Search Path: " + str(id2x2["search_path"]))
-# print("Execution time - " + str(id2x2["execution_time"]) + " seconds\n\n")
+# Initiate the results array for different algorithms
+dfs_results = []
+id_results = []
+a_star_h1_results = []
+a_star_h2_results = []
 
-# # Apply A* Algorithm on 2x2 puzzle
-# as2x2 = a_star(puzzle2x2, h1)
-# print("===== A-Star - 2x2 Matrix =====\n")
-# print("Path: " + str(as2x2["data"]))
-# print("Search Path: " + str(as2x2["search_path"]))
-# print("Execution time - " + str(as2x2["execution_time"]) + " seconds\n\n")
 
-# Create 3x3 puzzle
-puzzle3x3 = generate_puzzle(5)
+# Fill the array by computing each puzzle with each algorithm
+for puzzle in puzzles:
+    # dfs_results.append(depth_first_search(puzzle, k=None))
+    # id_results.append(iterative_deepening(puzzle))
+    a_star_h1_results.append(a_star(puzzle, h1))
+    a_star_h2_results.append(a_star(puzzle, h2))
 
-# # Apply Depth-First-Search on 3x3 puzzle
-# dfs3x3 = depth_first_search(puzzle3x3, k=None)
-# print("===== Depth-First-Search - 3x3 Matrix =====\n")
-# print("Path: " + str(dfs3x3["data"]))
-# print("Search Path: " + str(dfs3x3["search_path"]))
-# print("Execution time - " + str(dfs3x3["execution_time"]) + " seconds\n\n")
 
-# # Apply Iterative Deepening on 3x3 puzzle
-# id3x3 = iterative_deepening(puzzle3x3)
-# print("===== Iterarive-Deepening - 3x3 Matrix =====\n")
-# print("Path: " + str(id3x3["data"]))
-# print("Search Path: " + str(id3x3["search_path"]))
-# print("Execution time - " + str(id3x3["execution_time"]) + " seconds\n\n")
-
-# # # Apply A* Algorithm on 3x3 puzzle
-as3x3 = a_star(puzzle3x3, h1)
-print("===== A-Star - 3x3 Matrix =====\n")
-print("Path: " + str(as3x3["data"]))
-# print("Search Path: " + str(as3x3["search_path"]))
-print("Execution time h1 - " + str(as3x3["execution_time"]) + " seconds\n\n")
-
-# Apply A* Algorithm on 3x3 puzzle
-# as3x3 = a_star(puzzle3x3, h4)
-# print("===== A-Star - 3x3 Matrix =====\n")
-# print("Path: " + str(as3x3["data"]))
-# # print("Search Path: " + str(as3x3["search_path"]))
-# print("Execution time h4 - " + str(as3x3["execution_time"]) + " seconds\n\n")
+# Generate output file for DFS
+# generate_output("results/dfs.txt", dfs_results)
+# generate_output("results/id.txt", id_results)
+generate_output("results/a_star_h1.txt", a_star_h1_results)
+generate_output("results/a_star_h2.txt", a_star_h2_results)

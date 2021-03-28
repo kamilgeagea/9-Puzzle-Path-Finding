@@ -241,7 +241,7 @@ def generate_children(state):
 Returns the path of a State
 Arguments:
   - state: Instance of State (Tuple)
-Returns: List of State instances
+Returns: List of State instances -> NxN Matrices
 '''
 
 
@@ -253,6 +253,23 @@ def return_path(state):
         state = state[1]
 
     return path
+
+
+'''
+Returns the states of the search path
+Arguments:
+  - nodes: Array of nodes -> [(depth, parent, state)]
+Returns: List of State instances -> NxN Matrices
+'''
+
+
+def return_search_path(nodes):
+    search_path = []
+
+    for node in nodes:
+        search_path.append(node[2])
+
+    return search_path
 
 
 '''
@@ -269,3 +286,122 @@ def get_coords(matrix, element):
         for col, ele in enumerate(matrix[row]):
             if ele == element:
                 return (row, col)
+
+
+'''
+Returns the statistics related to an array of results from a specific algorithm
+Arguments:
+  - results: Array of Results -> [{"execution_time": double, "data": array, "search_path": array}]
+Returns: Dictionary: { "total_execution_time": double,
+        "total_search_path": double,
+        "total_solution_path": double,
+        "total_no_solution": double,
+        "avg_execution_time": double,
+        "avg_no_solution": double,
+        "avg_solution_path": double,
+        "avg_search_path": double }
+'''
+
+
+def generate_stats(results):
+    total_results = len(results)
+
+    total_execution_time = 0
+    total_search_path = 0
+    total_solution_path = 0
+    total_no_solution = 0
+
+    success_count = 0
+
+    for result in results:
+        if "No solutions" in result["data"]:
+            total_no_solution += 1
+            total_execution_time += result["execution_time"]
+        else:
+            success_count += 1
+            total_execution_time += result["execution_time"]
+            total_search_path += len(result["search_path"])
+            total_solution_path += len(result["data"])
+
+    avg_execution_time = total_execution_time / total_results
+    avg_no_solution = total_no_solution / total_results
+    if success_count == 0:
+        avg_solution_path = 0
+        avg_search_path = 0
+    else:
+        avg_solution_path = total_solution_path / success_count
+        avg_search_path = total_search_path / success_count
+
+    return {
+        "total_execution_time": total_execution_time,
+        "total_search_path": total_search_path,
+        "total_solution_path": total_solution_path,
+        "total_no_solution": total_no_solution,
+        "avg_execution_time": avg_execution_time,
+        "avg_no_solution": avg_no_solution,
+        "avg_solution_path": avg_solution_path,
+        "avg_search_path": avg_search_path
+    }
+
+
+'''
+Function that takes a file name and an array of results, and outputs them in a file
+Arguments:
+  - filename: String
+  - results: Array of Results -> [{"execution_time": double, "data": array, "search_path": array}]
+Returns: void
+'''
+
+
+def generate_output(filename, results):
+    # Generate statistics related to the results
+    stats = generate_stats(results)
+
+    with open(filename, mode="w") as f:
+        print("Statistics: \n", file=f)
+
+        print("Total Execution Time: " +
+              str(stats["total_execution_time"]) + "\n", file=f)
+        print("Total Search Path: " +
+              str(stats["total_search_path"]) + "\n", file=f)
+        print("Total Solution Path: " +
+              str(stats["total_solution_path"]) + "\n", file=f)
+        print("Total No Solutions: " +
+              str(stats["total_no_solution"]) + "\n", file=f)
+        print("Average Execution Time: " +
+              str(stats["avg_execution_time"]) + "\n", file=f)
+        print("Average Search Path: " +
+              str(stats["avg_search_path"]) + "\n", file=f)
+        print("Average Solution Path: " +
+              str(stats["avg_solution_path"]) + "\n", file=f)
+        print("Average No Solutions: " +
+              str(stats["avg_no_solution"]) + "\n", file=f)
+
+        print("\n\n\n", file=f)
+
+        for idx, result in enumerate(results):
+            print("=== Puzzle " + str(idx+1) + " ===\n", file=f)
+            print("Puzzle: " + str(result["data"][0]) + "\n", file=f)
+            print("Execution Time: " +
+                  str(result["execution_time"]) + "\n", file=f)
+            print("Search Path: " + str(result["search_path"]) + "\n", file=f)
+            print("Solution Path: " + str(result["data"]) + "\n", file=f)
+
+            print("\n", file=f)
+
+
+'''
+Prints Results of Algorithms
+Arguments:
+  - title: String
+  - result: dictionary: {"execution_time": double, "data": array, "search_path": array}
+Returns: void
+'''
+
+
+def print_output(title, result):
+    print(title + "\n")
+    print("Execution Time: " + str(result["execution_time"]) + "\n")
+    print("Search Path: " + str(result["search_path"]) + "\n")
+    print("Solution Path: " + str(result["data"]) + "\n")
+    print("\n")

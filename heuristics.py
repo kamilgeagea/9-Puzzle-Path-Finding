@@ -33,10 +33,11 @@ def h1(state):
 
 
 '''
-Heuristic that calculates the sum of the sum of the euclidian distance between an element and its goal position
+Heuristic that calculates the sum of the sum of the manhattan distance between an element and its goal position multiplied by an
+importance coefficient determined by the closeness of the goal position to the nearest corner.
 Arguments:
   - state: NxN Matrix
-Returns: Number -> Sum of each element minimum moves needed to get to its goal coords
+Returns: Number -> Sum of distances of each element multiplied by they respective importance coefficient
 '''
 
 
@@ -78,6 +79,19 @@ def h2(state):
     return sum
 
 
+# def h3(state):
+#     a = list(chain.from_iterable(state))
+
+#     sum = 0
+
+#     for i in range(0, len(a)):
+#         for j in range(i+1, len(a)):
+#             if a[i] > a[j]:
+#                 sum += 1
+
+#     return sum
+
+
 # def h4(state):
 #     # Get Matrix Dimensions
 #     dimensions = len(state)
@@ -99,18 +113,5 @@ def h2(state):
 #             point2 = np.array((i, j))
 
 #             sum += np.linalg.norm(point1-point2)
-
-#     return sum
-
-
-# def h3(state):
-#     a = list(chain.from_iterable(state))
-
-#     sum = 0
-
-#     for i in range(0, len(a)):
-#         for j in range(i+1, len(a)):
-#             if a[i] > a[j]:
-#                 sum += 1
 
 #     return sum

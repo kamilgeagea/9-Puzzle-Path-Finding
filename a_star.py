@@ -1,5 +1,5 @@
 import time
-from utility_functions import is_goal, return_path, generate_children, in_list
+from utility_functions import is_goal, return_path, generate_children, in_list, return_search_path
 
 '''
 A* Algorithm
@@ -43,7 +43,7 @@ def a_star(state, heuristic):
             return {
                 "data": return_path(node),
                 "execution_time": finish_time,
-                "search_path": closed
+                "search_path": return_search_path(closed)
             }
 
         # If the state is not the goal state - generate children

@@ -1,6 +1,6 @@
 import time
 from dfs import depth_first_search
-from utility_functions import generate_puzzle
+from utility_functions import generate_puzzle, return_search_path
 
 '''
 Iterative Deepening - Will iterate over the limits and execute a DFS for each iteration
@@ -39,7 +39,7 @@ def iterative_deepening(matrix):
             return {
                 "data": results["data"],
                 "execution_time": finish_time,
-                "search_path": results["search_path"]
+                "search_path": return_search_path(results["search_path"])
             }
 
         # Increment Max Depth for next iteration
