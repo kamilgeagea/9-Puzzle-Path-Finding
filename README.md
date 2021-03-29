@@ -1,8 +1,7 @@
 # COMP472-Assignment 2
 COMP 472 - Assignment 2 - The S Puzzle
 
-## Puzzle Description
-# Rules of the Puzzle
+# Puzzle Description
 The S-Puzzle is a type of Sliding-tiles puzzle played on a n-by-n grid, with numbers occupying each individual cell. In the S-Puzzle, there is are no spaces; all n^2 tiles are occupied by a number from 1 - n^2. The game is played by swapping any two adjacent tiles, where adjacency is defined grid-wise (diagonal tiles are not adjacent) and does not wrap around. Like in the original Sliding Tiles puzzle, the goal of the S-Puzzle is to arrange the numbers in ascending order.
 
 
