@@ -273,5 +273,3 @@ To get help or ask questions, Please Contact any of the following students:
    **Student ID:** 40004558\
    **Github Username:** mairsarmy32\
    **Email Address:** mairelbaz552@hotmail.com
-
-## References
