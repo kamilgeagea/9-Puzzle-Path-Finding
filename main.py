@@ -31,7 +31,7 @@ for puzzle in puzzles:
     a_star_h2_results.append(a_star(puzzle, h2))
 
 
-# Generate output file for DFS
+# Generate output files
 generate_output("results/dfs.txt", dfs_results)
 generate_output("results/id.txt", id_results)
 generate_output("results/a_star_h1.txt", a_star_h1_results)
