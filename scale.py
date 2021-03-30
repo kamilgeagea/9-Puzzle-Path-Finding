@@ -3,7 +3,7 @@ from heuristics import h1, h2
 from utility_functions import generate_puzzles, generate_output
 
 # Number of puzzles
-n = 1
+n = 5
 
 # Generate 4x4 puzzles
 puzzles4x4 = generate_puzzles(n, 4)
@@ -43,3 +43,13 @@ for puzzle in puzzles6x6:
 
 generate_output("results/scale/h1_6x6.txt", h1_6x6_results)
 generate_output("results/scale/h2_6x6.txt", h2_6x6_results)
+
+# Generate 7x7 puzzles
+puzzles7x7 = generate_puzzles(n, 7)
+
+h2_7x7_results = []
+
+for puzzle in puzzles7x7:
+    h2_7x7_results.append(a_star(puzzle, h2))
+
+generate_output("results/scale/h2_7x7.txt", h2_7x7_results)

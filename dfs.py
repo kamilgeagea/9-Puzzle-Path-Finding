@@ -10,7 +10,7 @@ Returns: Dictionary with the path (array of matrices from the start state to the
 '''
 
 
-def depth_first_search(state, k):
+def depth_first_search(state, k, time_limit=True):
     # Initializing start time
     start_time = time.time()
 
@@ -23,7 +23,7 @@ def depth_first_search(state, k):
     # Algorithm runs while the open list has elements
     while len(open) > 0:
         # Check if the 60s mark is exceeded - if yes return "no solutions"
-        if time.time() - start_time > 60:
+        if time.time() - start_time > 60 and time_limit:
             return {
                 "data": "No solutions - Time exceeded",
                 "execution_time": time.time() - start_time,

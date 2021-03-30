@@ -1,0 +1,260 @@
+Total Execution Time: 2315.136300802231
+
+Total Search Path: 0
+
+Total Solution Path: 0
+
+Total No Solutions: 20
+
+Average Execution Time: 115.75681504011155
+
+Average Search Path: 0
+
+Average Solution Path: 0
+
+Average No Solutions: 1.0
+
+
+
+
+
+=== Puzzle 1 ===
+
+Puzzle: N
+
+Execution Time: 116.36057496070862
+
+Search Path: No solutions
+
+Solution Path: No solutions - Time exceeded
+
+
+
+=== Puzzle 2 ===
+
+Puzzle: N
+
+Execution Time: 117.28424286842346
+
+Search Path: No solutions
+
+Solution Path: No solutions - Time exceeded
+
+
+
+=== Puzzle 3 ===
+
+Puzzle: N
+
+Execution Time: 116.53202271461487
+
+Search Path: No solutions
+
+Solution Path: No solutions - Time exceeded
+
+
+
+=== Puzzle 4 ===
+
+Puzzle: N
+
+Execution Time: 117.32566905021667
+
+Search Path: No solutions
+
+Solution Path: No solutions - Time exceeded
+
+
+
+=== Puzzle 5 ===
+
+Puzzle: N
+
+Execution Time: 119.2246778011322
+
+Search Path: No solutions
+
+Solution Path: No solutions - Time exceeded
+
+
+
+=== Puzzle 6 ===
+
+Puzzle: N
+
+Execution Time: 116.57699775695801
+
+Search Path: No solutions
+
+Solution Path: No solutions - Time exceeded
+
+
+
+=== Puzzle 7 ===
+
+Puzzle: N
+
+Execution Time: 117.80928087234497
+
+Search Path: No solutions
+
+Solution Path: No solutions - Time exceeded
+
+
+
+=== Puzzle 8 ===
+
+Puzzle: N
+
+Execution Time: 115.20483303070068
+
+Search Path: No solutions
+
+Solution Path: No solutions - Time exceeded
+
+
+
+=== Puzzle 9 ===
+
+Puzzle: N
+
+Execution Time: 117.54966187477112
+
+Search Path: No solutions
+
+Solution Path: No solutions - Time exceeded
+
+
+
+=== Puzzle 10 ===
+
+Puzzle: N
+
+Execution Time: 115.6544599533081
+
+Search Path: No solutions
+
+Solution Path: No solutions - Time exceeded
+
+
+
+=== Puzzle 11 ===
+
+Puzzle: N
+
+Execution Time: 114.82442808151245
+
+Search Path: No solutions
+
+Solution Path: No solutions - Time exceeded
+
+
+
+=== Puzzle 12 ===
+
+Puzzle: N
+
+Execution Time: 116.86990523338318
+
+Search Path: No solutions
+
+Solution Path: No solutions - Time exceeded
+
+
+
+=== Puzzle 13 ===
+
+Puzzle: N
+
+Execution Time: 115.29480719566345
+
+Search Path: No solutions
+
+Solution Path: No solutions - Time exceeded
+
+
+
+=== Puzzle 14 ===
+
+Puzzle: N
+
+Execution Time: 115.17419004440308
+
+Search Path: No solutions
+
+Solution Path: No solutions - Time exceeded
+
+
+
+=== Puzzle 15 ===
+
+Puzzle: N
+
+Execution Time: 116.5533549785614
+
+Search Path: No solutions
+
+Solution Path: No solutions - Time exceeded
+
+
+
+=== Puzzle 16 ===
+
+Puzzle: N
+
+Execution Time: 118.41770315170288
+
+Search Path: No solutions
+
+Solution Path: No solutions - Time exceeded
+
+
+
+=== Puzzle 17 ===
+
+Puzzle: N
+
+Execution Time: 117.25769710540771
+
+Search Path: No solutions
+
+Solution Path: No solutions - Time exceeded
+
+
+
+=== Puzzle 18 ===
+
+Puzzle: N
+
+Execution Time: 112.63263010978699
+
+Search Path: No solutions
+
+Solution Path: No solutions - Time exceeded
+
+
+
+=== Puzzle 19 ===
+
+Puzzle: N
+
+Execution Time: 107.59112310409546
+
+Search Path: No solutions
+
+Solution Path: No solutions - Time exceeded
+
+
+
+=== Puzzle 20 ===
+
+Puzzle: N
+
+Execution Time: 110.99804091453552
+
+Search Path: No solutions
+
+Solution Path: No solutions - Time exceeded
+
+
+

@@ -358,7 +358,7 @@ def generate_output(filename, results):
     stats = generate_stats(results)
 
     with open(filename, mode="w") as f:
-        print("Statistics: \n", file=f)
+        # print("Statistics: \n", file=f)
 
         print("Total Execution Time: " +
               str(stats["total_execution_time"]) + "\n", file=f)
@@ -384,8 +384,10 @@ def generate_output(filename, results):
             print("Puzzle: " + str(result["data"][0]) + "\n", file=f)
             print("Execution Time: " +
                   str(result["execution_time"]) + "\n", file=f)
-            print("Search Path: " + str(result["search_path"]) + "\n", file=f)
-            print("Solution Path: " + str(result["data"]) + "\n", file=f)
+            print("Search Path: " +
+                  str(result["search_path"]) + "\n", file=f)
+            print("Solution Path: " +
+                  str(result["data"]) + "\n", file=f)
 
             print("\n", file=f)
 

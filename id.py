@@ -10,7 +10,7 @@ Returns: Dictionary with the path (array of matrices from the start state to the
 '''
 
 
-def iterative_deepening(matrix):
+def iterative_deepening(matrix, time_limit=True):
     # Calculate the start time
     start_time = time.time()
 
@@ -20,7 +20,7 @@ def iterative_deepening(matrix):
     # Execute the algorithm until it returns a solution
     while True:
         # Check if the 60s limit has been exceeded
-        if time.time() - start_time > 60:
+        if time.time() - start_time > 60 and time_limit:
             return {
                 "data": "No solutions - Time exceeded",
                 "execution_time": time.time() - start_time,

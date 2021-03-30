@@ -1,10 +1,10 @@
 # Draw.io Link: https://app.diagrams.net/#LUntitled%20Diagram
 
-from dfs import depth_first_search
-from id import iterative_deepening
-from a_star import a_star
-from heuristics import h1, h2
 from utility_functions import generate_puzzles, generate_output
+from heuristics import h1, h2
+from a_star import a_star
+from id import iterative_deepening
+from dfs import depth_first_search
 
 # Number of puzzles
 n = 20
