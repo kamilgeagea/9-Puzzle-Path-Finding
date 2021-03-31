@@ -245,7 +245,6 @@ for puzzle in puzzles:
 
 **Step 5: Output Results to respective file:**
 ```
-# Generate output file for DFS
 generate_output("results/dfs.txt", dfs_results)
 generate_output("results/id.txt", id_results)
 generate_output("results/a_star_h1.txt", a_star_h1_results)
